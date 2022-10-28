@@ -20,10 +20,11 @@ axios.get(url).then(response => {
 });
 
 
-const logTodo = (id: number, title: string, completed: boolean): void => {
+const logTodo = (id: number, title: string, completed: boolean) => {
     console.log(`
         ID: ${id}
         Title: ${title}
         Completed: ${completed}
     `);
 };
+

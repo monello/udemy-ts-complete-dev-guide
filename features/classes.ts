@@ -1,22 +1,17 @@
 class Vehicle {
-  private drive(): void {
-    console.log('chugga chugga');
-  }
-
-  startDrivingProcess(): void {
-    this.drive();
-  }
-
   honk(): void {
     console.log('beep');
   }
 }
 
 class MotorCar extends Vehicle {
-  // had to remove this method - I don't think you can override private methods - will probably see in the next lesson
-  // private drive(): void {
-  //   console.log('vroom');
-  // }
+  private drive(): void {
+    console.log('Vroom');
+  }
+
+  startDrivingProcess(): void {
+    this.drive();
+  }
 }
 
 const motorcar = new MotorCar();

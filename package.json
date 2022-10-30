@@ -1,26 +1,24 @@
 {
-  "name": "udemy-ts-complete-dev-guide",
-  "version": "1.0.0",
-  "description": "This is the code-along for the udemy course \"[Typescript: The Complete Developers Guide](https://stepstone3.udemy.com/course/typescript-the-complete-developers-guide/learn/lecture/15066372#overview)\" by [Stephen Grider](https://stepstone3.udemy.com/user/sgslo/)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/monello/udemy-ts-complete-dev-guide.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/monello/udemy-ts-complete-dev-guide/issues"
-  },
-  "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme",
-  "devDependencies": {
-    "typescript": "^4.8.4"
-  },
-  "dependencies": {
-    "@faker-js/faker": "^7.6.0"
-  }
+    "name": "udemy-ts-complete-dev-guide",
+    "version": "1.0.0",
+    "description": "This is the code-along for the udemy course \"[Typescript: The Complete Developers Guide](https://stepstone3.udemy.com/course/typescript-the-complete-developers-guide/learn/lecture/15066372#overview)\" by [Stephen Grider](https://stepstone3.udemy.com/user/sgslo/)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/monello/udemy-ts-complete-dev-guide.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/monello/udemy-ts-complete-dev-guide/issues"
+    },
+    "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme",
+    "devDependencies": {
+        "@faker-js/faker": "^7.6.0",
+        "typescript": "^4.8.4"
+    }
 }

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme",
   "devDependencies": {
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }

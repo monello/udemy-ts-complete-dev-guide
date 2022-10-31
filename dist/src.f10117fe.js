@@ -22873,6 +22873,26 @@ var User = /** @class */function () {
   return User;
 }();
 exports.User = User;
+},{"@faker-js/faker":"node_modules/@faker-js/faker/dist/esm/index.mjs"}],"src/Company.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Company = void 0;
+var faker_1 = require("@faker-js/faker");
+var Company = /** @class */function () {
+  function Company() {
+    this.name = faker_1.faker.company.name();
+    this.catchPhrase = faker_1.faker.company.catchPhrase();
+    this.location = {
+      lat: +faker_1.faker.address.latitude(),
+      lng: +faker_1.faker.address.longitude()
+    };
+  }
+  return Company;
+}();
+exports.Company = Company;
 },{"@faker-js/faker":"node_modules/@faker-js/faker/dist/esm/index.mjs"}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -22880,9 +22900,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var User_1 = require("./User");
+var Company_1 = require("./Company");
 var user = new User_1.User();
-console.log("user: ", user);
-},{"./User":"src/User.ts"}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+console.log("user:", user);
+var company = new Company_1.Company();
+console.log("company:", company);
+},{"./User":"src/User.ts","./Company":"src/Company.ts"}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -22907,7 +22930,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50676" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63281" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

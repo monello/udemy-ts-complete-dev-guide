@@ -117,7 +117,40 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/index.ts":[function(require,module,exports) {
+})({"src/CustomMap.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CustomMap = void 0;
+var CustomMap = /** @class */function () {
+  function CustomMap(_a) {
+    var targetId = _a.targetId,
+      zoomLevel = _a.zoomLevel,
+      startPosition = _a.startPosition;
+    // Setting some defaults
+    targetId = targetId || 'map';
+    zoomLevel = zoomLevel || 1;
+    startPosition = startPosition || {
+      lat: 0,
+      lng: 0
+    };
+    // The map, centered at startPosition
+    this.map = new google.maps.Map(document.getElementById(targetId), {
+      zoom: zoomLevel,
+      center: startPosition
+    });
+    // The marker, positioned at Uluru
+    this.marker = new google.maps.Marker({
+      position: startPosition,
+      map: this.map
+    });
+  }
+  return CustomMap;
+}();
+exports.CustomMap = CustomMap;
+},{}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
 // import { User } from "./User";
@@ -125,29 +158,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var CustomMap_1 = require("./CustomMap");
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
-  // const start_position = { lat: -25.344, lng: 131.031 };
-  var start_position = {
-    lat: 0,
-    lng: 0
-  };
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-  // MRL: The target HTML-Element to load the map UI in
-  document.getElementById("map"), {
-    zoom: 1,
-    center: start_position
-  });
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({
-    position: start_position,
-    map: map
+  var mm = new CustomMap_1.CustomMap({
+    targetId: 'map',
+    zoomLevel: 4,
+    startPosition: {
+      lat: -25.344,
+      lng: 131.031
+    }
   });
 }
 window.initMap = initMap;
-},{}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./CustomMap":"src/CustomMap.ts"}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -172,7 +196,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63281" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62683" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

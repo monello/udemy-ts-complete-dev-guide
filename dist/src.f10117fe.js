@@ -22873,6 +22873,26 @@ var User = /** @class */function () {
   return User;
 }();
 exports.User = User;
+},{"@faker-js/faker":"node_modules/@faker-js/faker/dist/esm/index.mjs"}],"src/Company.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Company = void 0;
+var faker_1 = require("@faker-js/faker");
+var Company = /** @class */function () {
+  function Company() {
+    this.name = faker_1.faker.company.name();
+    this.catchPhrase = faker_1.faker.company.catchPhrase();
+    this.location = {
+      lat: +faker_1.faker.address.latitude(),
+      lng: +faker_1.faker.address.longitude()
+    };
+  }
+  return Company;
+}();
+exports.Company = Company;
 },{"@faker-js/faker":"node_modules/@faker-js/faker/dist/esm/index.mjs"}],"src/CustomMap.ts":[function(require,module,exports) {
 "use strict";
 
@@ -22907,6 +22927,15 @@ var CustomMap = /** @class */function () {
       }
     });
   };
+  CustomMap.prototype.addCompanyMarker = function (company) {
+    new google.maps.Marker({
+      map: this.map,
+      position: {
+        lat: company.location.lat,
+        lng: company.location.lng
+      }
+    });
+  };
   return CustomMap;
 }();
 exports.CustomMap = CustomMap;
@@ -22917,7 +22946,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var User_1 = require("./User");
-// import { Company } from "./Company";
+var Company_1 = require("./Company");
 var CustomMap_1 = require("./CustomMap");
 // Initialize and add the map
 function initMap() {
@@ -22927,9 +22956,11 @@ function initMap() {
   });
   var user = new User_1.User();
   map.addUserMarker(user);
+  var company = new Company_1.Company();
+  map.addCompanyMarker(company);
 }
 window.initMap = initMap;
-},{"./User":"src/User.ts","./CustomMap":"src/CustomMap.ts"}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

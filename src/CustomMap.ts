@@ -1,4 +1,5 @@
 import { User } from './User';
+import { Company } from './Company';
 interface CustomMapProps {
     targetId: string;
     zoomLevel?: number;
@@ -34,6 +35,16 @@ export class CustomMap {
             position: {
                 lat: user.location.lat,
                 lng: user.location.lng
+            }
+        });
+    }
+
+    addCompanyMarker(company: Company): void {
+        new google.maps.Marker({
+            map: this.map,
+            position: {
+                lat: company.location.lat,
+                lng: company.location.lng
             }
         });
     }

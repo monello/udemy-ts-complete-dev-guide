@@ -1,3 +1,4 @@
+import { User } from './User';
 interface CustomMapProps {
     targetId: string;
     zoomLevel?: number;
@@ -8,7 +9,6 @@ interface CustomMapProps {
 }
 export class CustomMap {
     private map: google.maps.Map;
-    marker: google.maps.Marker;
 
     constructor({ targetId, zoomLevel, startPosition }: CustomMapProps) {
         // Setting some defaults
@@ -26,11 +26,15 @@ export class CustomMap {
                 center: startPosition,
             }
         );
+    }
 
-        // The marker, positioned at Uluru
-        this.marker = new google.maps.Marker({
-            position: startPosition,
+    addUserMarker(user: User): void {
+        new google.maps.Marker({
             map: this.map,
+            position: {
+                lat: user.location.lat,
+                lng: user.location.lng
+            }
         });
     }
 }

@@ -22918,21 +22918,12 @@ var CustomMap = /** @class */function () {
       center: startPosition
     });
   }
-  CustomMap.prototype.addUserMarker = function (user) {
+  CustomMap.prototype.addMarker = function (mappable) {
     new google.maps.Marker({
       map: this.map,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng
-      }
-    });
-  };
-  CustomMap.prototype.addCompanyMarker = function (company) {
-    new google.maps.Marker({
-      map: this.map,
-      position: {
-        lat: company.location.lat,
-        lng: company.location.lng
+        lat: mappable.location.lat,
+        lng: mappable.location.lng
       }
     });
   };
@@ -22955,9 +22946,9 @@ function initMap() {
     zoomLevel: 1
   });
   var user = new User_1.User();
-  map.addUserMarker(user);
+  map.addMarker(user);
   var company = new Company_1.Company();
-  map.addCompanyMarker(company);
+  map.addMarker(company);
 }
 window.initMap = initMap;
 },{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"../../../../Users/louwmo01/AppData/Roaming/nvm/v14.16.1/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

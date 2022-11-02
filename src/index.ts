@@ -11,10 +11,10 @@ function initMap(): void {
     });
 
     const user = new User();
-    map.addUserMarker(user);
+    map.addMarker(user);
 
     const company = new Company();
-    map.addCompanyMarker(company);
+    map.addMarker(company);
 }
 
 declare global {

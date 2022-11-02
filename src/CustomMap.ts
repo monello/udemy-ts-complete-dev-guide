@@ -29,24 +29,34 @@ export class CustomMap {
         );
     }
 
-    addUserMarker(user: User): void {
+    addMarker(mappable: User | Company): void {
         new google.maps.Marker({
             map: this.map,
             position: {
-                lat: user.location.lat,
-                lng: user.location.lng
+                lat: mappable.location.lat,
+                lng: mappable.location.lng
             }
         });
     }
 
-    addCompanyMarker(company: Company): void {
-        new google.maps.Marker({
-            map: this.map,
-            position: {
-                lat: company.location.lat,
-                lng: company.location.lng
-            }
-        });
-    }
+    // addUserMarker(user: User): void {
+    //     new google.maps.Marker({
+    //         map: this.map,
+    //         position: {
+    //             lat: user.location.lat,
+    //             lng: user.location.lng
+    //         }
+    //     });
+    // }
+
+    // addCompanyMarker(company: Company): void {
+    //     new google.maps.Marker({
+    //         map: this.map,
+    //         position: {
+    //             lat: company.location.lat,
+    //             lng: company.location.lng
+    //         }
+    //     });
+    // }
 }
 

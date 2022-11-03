@@ -1,19 +1,15 @@
+import { Location } from './types';
+
 // Instructions to every other class on how thet can be an
 // argument to the `addMarker()` method
 interface Mappable {
-    location: {
-        lat: number,
-        lng: number;
-    };
+    location: Location;
 }
 
 interface CustomMapProps {
     targetId: string;
     zoomLevel?: number;
-    startPosition?: {
-        lat: number;
-        lng: number;
-    };
+    startPosition?: Location;
 }
 export class CustomMap {
     private map: google.maps.Map;

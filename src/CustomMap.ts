@@ -33,12 +33,23 @@ export class CustomMap {
     }
 
     addMarker(mappable: Mappable): void {
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
             map: this.map,
             position: {
                 lat: mappable.location.lat,
                 lng: mappable.location.lng
             }
+        });
+
+        marker.addListener('click', () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: 'Hi there!'
+            });
+
+            infoWindow.open(
+                this.map,   // reference the Google Maps instance
+                marker      // reference this marker
+            );
         });
     }
 }

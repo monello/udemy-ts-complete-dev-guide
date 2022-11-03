@@ -2,9 +2,10 @@ import { Location } from './types';
 
 // Instructions to every other class on how thet can be an
 // argument to the `addMarker()` method
-interface Mappable {
+export interface Mappable {
     location: Location;
     markerContent(): string;
+    color: string;
 }
 
 interface CustomMapProps {

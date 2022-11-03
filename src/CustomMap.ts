@@ -1,5 +1,12 @@
-import { User } from './User';
-import { Company } from './Company';
+// Instructions to every other class on how thet can be an
+// argument to the `addMarker()` method
+interface Mappable {
+    location: {
+        lat: number,
+        lng: number;
+    };
+}
+
 interface CustomMapProps {
     targetId: string;
     zoomLevel?: number;
@@ -29,7 +36,7 @@ export class CustomMap {
         );
     }
 
-    addMarker(mappable: User | Company): void {
+    addMarker(mappable: Mappable): void {
         new google.maps.Marker({
             map: this.map,
             position: {
@@ -38,25 +45,5 @@ export class CustomMap {
             }
         });
     }
-
-    // addUserMarker(user: User): void {
-    //     new google.maps.Marker({
-    //         map: this.map,
-    //         position: {
-    //             lat: user.location.lat,
-    //             lng: user.location.lng
-    //         }
-    //     });
-    // }
-
-    // addCompanyMarker(company: Company): void {
-    //     new google.maps.Marker({
-    //         map: this.map,
-    //         position: {
-    //             lat: company.location.lat,
-    //             lng: company.location.lng
-    //         }
-    //     });
-    // }
 }
 

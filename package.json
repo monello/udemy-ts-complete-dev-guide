@@ -1,20 +1,26 @@
 {
-  "name": "udemy-ts-complete-dev-guide",
-  "version": "1.0.0",
-  "description": "This is the code-along for the udemy course \"[Typescript: The Complete Developers Guide](https://stepstone3.udemy.com/course/typescript-the-complete-developers-guide/learn/lecture/15066372#overview)\" by [Stephen Grider](https://stepstone3.udemy.com/user/sgslo/)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/monello/udemy-ts-complete-dev-guide.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/monello/udemy-ts-complete-dev-guide/issues"
-  },
-  "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme"
+    "name": "udemy-ts-complete-dev-guide",
+    "version": "1.0.0",
+    "description": "This is the code-along for the udemy course \"[Typescript: The Complete Developers Guide](https://stepstone3.udemy.com/course/typescript-the-complete-developers-guide/learn/lecture/15066372#overview)\" by [Stephen Grider](https://stepstone3.udemy.com/user/sgslo/)",
+    "main": "index.js",
+    "scripts": {
+        "start:build": "tsc -w",
+        "start:run": "nodemon dist/index.js",
+        "start": "concurrently npm:start:*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/monello/udemy-ts-complete-dev-guide.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/monello/udemy-ts-complete-dev-guide/issues"
+    },
+    "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme",
+    "dependencies": {
+        "concurrently": "^7.5.0",
+        "nodemon": "^2.0.20"
+    }
 }

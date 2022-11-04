@@ -20,7 +20,9 @@ class Sorter {
 
                 // Only going to work if collection is a string
                 // if collection is a string, do this logic instead:
-                // ~~~ logic to compare and swop characters in a string
+                if (typeof this.collection === 'string') {
+                    // ~~~ logic to compare and swop characters in a string
+                }
             }
         }
     }

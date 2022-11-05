@@ -5,4 +5,11 @@ export class NumbersCollection {
     compare(leftIndex: number, rightIndex: number): boolean {
         return this.data[leftIndex] > this.data[rightIndex];
     }
+
+    // swap the left and right elements
+    swap(leftIndex: number, rightIndex: number): void {
+        const leftHand = this.data[leftIndex];
+        this.data[leftIndex] = this.data[rightIndex];
+        this.data[rightIndex] = leftHand;
+    }
 }

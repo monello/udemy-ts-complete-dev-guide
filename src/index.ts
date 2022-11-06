@@ -12,4 +12,15 @@ const matches = fs.
     // (the Typing below is redundant as TS is perfectly able to infer the types, but it's added here for clarity)
     .map((row: string): string[] => row.split(','));
 
-console.log(matches);
+// Some basic data analysis
+let manUnitedWins = 0;
+
+for (let match of matches) {
+    if (match[1] === 'Man United' && match[5] === 'H') {
+        manUnitedWins++;
+    } else if (match[2] === 'Man United' && match[5] === 'A') {
+        manUnitedWins++;
+    }
+}
+
+console.log(`Man United won ${manUnitedWins} games`);

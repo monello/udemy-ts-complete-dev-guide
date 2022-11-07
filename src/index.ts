@@ -1,16 +1,7 @@
-import fs from 'fs';
+import { CsvFileReader } from './CsvFileReader';
 
-const matches = fs.
-    readFileSync('football.csv', {
-        // The 'encoding' setting tells fs what kind of file we are trying to read, by telling it the encoding of the file content.
-        // In this case text encoded as "utf-8"
-        encoding: 'utf-8',
-    })
-    // Split the full-file string by newline characters to get an array of comma-separated line
-    .split('\n')
-    // Iterate over each line and split by comma to return an array of strings, with each column in its own element
-    // (the Typing below is redundant as TS is perfectly able to infer the types, but it's added here for clarity)
-    .map((row: string): string[] => row.split(','));
+const reader = new CsvFileReader('football.csv');
+reader.read();
 
 // Some basic data analysis
 let manUnitedWins = 0;
@@ -21,7 +12,7 @@ enum MatchResult {
     Draw = 'D'
 }
 
-for (let match of matches) {
+for (let match of reader.data) {
     if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
         manUnitedWins++;
     } else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {

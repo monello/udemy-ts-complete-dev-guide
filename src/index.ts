@@ -1,6 +1,7 @@
 import { MatchReader } from './MatchReader';
 import { CsvFileReader } from './CsvFileReader';
 import { ConsoleReport } from './reportTargets/ConsoleReport';
+import { HtmlReport } from './reportTargets/HtmlReport';
 import { WinsAnalyzer } from './analyzers/WinsAnalysis';
 import { Summary } from './Summary';
 
@@ -16,7 +17,8 @@ matchReader.load();
 // 4. Initialize the Analyser and Reporter
 const summary = new Summary(
     new WinsAnalyzer('Man United'),
-    new ConsoleReport()
+    // new ConsoleReport()
+    new HtmlReport()
 );
 // 5. Produce the report from the extracted data
 summary.buildAndPrintReport(matchReader.matches);

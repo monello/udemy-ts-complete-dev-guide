@@ -11,16 +11,5 @@ const matchReader = new MatchReader(csvFileReader);
 // 3. Load (and transform) the data
 matchReader.load();
 
-// Some basic data analysis
-let manUnitedWins = 0;
 
-// 4. Update the reference from where to get the data to report on
-for (let match of matchReader.matches) {
-    if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
-        manUnitedWins++;
-    } else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {
-        manUnitedWins++;
-    }
-}
-
-console.log(`Man United won ${manUnitedWins} games`);
+// console.log(`Man United won ${manUnitedWins} games`);

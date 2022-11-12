@@ -1,8 +1,8 @@
 import { MatchReader } from './MatchReader';
 import { CsvFileReader } from './CsvFileReader';
-import { ConsoleReport } from './reportTargets/ConsoleReport';
-import { HtmlReport } from './reportTargets/HtmlReport';
-import { WinsAnalyzer } from './analyzers/WinsAnalysis';
+// import { ConsoleReport } from './reportTargets/ConsoleReport';
+// import { HtmlReport } from './reportTargets/HtmlReport';
+// import { WinsAnalyzer } from './analyzers/WinsAnalysis';
 import { Summary } from './Summary';
 
 // 1. Create an object that satisfies the 'DataReader' interfacs
@@ -14,11 +14,14 @@ const matchReader = new MatchReader(csvFileReader);
 // 3. Load (and transform) the data
 matchReader.load();
 
-// 4. Initialize the Analyser and Reporter
-const summary = new Summary(
-    new WinsAnalyzer('Man United'),
-    // new ConsoleReport()
-    new HtmlReport()
-);
+// // 4. Initialize the Analyser and Reporter
+// const summary = new Summary(
+//     new WinsAnalyzer('Man United'),
+//     // new ConsoleReport()
+//     new HtmlReport()
+// );
+
+const summary = Summary.winsHtmlReport('Man United');
+
 // 5. Produce the report from the extracted data
 summary.buildAndPrintReport(matchReader.matches);

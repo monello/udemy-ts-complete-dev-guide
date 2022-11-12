@@ -1,4 +1,6 @@
+import { WinsAnalyzer } from "./analyzers/WinsAnalysis";
 import { MatchData } from "./MatchData";
+import { HtmlReport } from "./reportTargets/HtmlReport";
 
 /*
     NOTE:
@@ -26,5 +28,12 @@ export class Summary {
     buildAndPrintReport(matches: MatchData[]): void {
         const output = this.analyzer.run(matches);
         this.outputTarget.print(output);
+    }
+
+    static winsHtmlReport(team: string): Summary {
+        return new Summary(
+            new WinsAnalyzer(team),
+            new HtmlReport()
+        );
     }
 }

@@ -1,6 +1,7 @@
 import { dateStringToDate } from './utils';
 import { MatchResult } from './MatchResult';
 import { MatchData } from './MatchData';
+import { CsvFileReader } from './CsvFileReader';
 
 interface DataReader {
     read(): void;
@@ -27,4 +28,7 @@ export class MatchReader {
         });
     }
 
+    static fromCsv(fileName: string): MatchReader {
+        return new MatchReader(new CsvFileReader('football.csv'));
+    }
 }

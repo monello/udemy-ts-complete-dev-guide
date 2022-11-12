@@ -22,4 +22,9 @@ export interface OutputTarget {
 // This will allow us to call theit methods on these object instances (DELEGATION)
 export class Summary {
     constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) { }
+
+    buildAndPrintReport(matches: MatchData[]): void {
+        const output = this.analyzer.run(matches);
+        this.outputTarget.print(output);
+    }
 }

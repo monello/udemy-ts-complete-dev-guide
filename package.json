@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/monello/udemy-ts-complete-dev-guide/issues"
   },
-  "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme"
+  "homepage": "https://github.com/monello/udemy-ts-complete-dev-guide#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }

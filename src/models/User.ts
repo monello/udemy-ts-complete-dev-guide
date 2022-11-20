@@ -3,7 +3,7 @@ export interface UserProps {
     age?: number;
 }
 
-type Callback = () => {};
+type Callback = () => void;
 
 export class User {
     // [key: string] is a TypeScript "index signature", we use this when we don't know what
@@ -20,7 +20,7 @@ export class User {
         Object.assign(this.data, update);
     }
 
-    on(eventName: string, callback: Callback) {
+    on(eventName: string, callback: Callback): void {
 
     }
 }

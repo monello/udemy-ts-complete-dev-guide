@@ -25,4 +25,18 @@ export class User {
         handlers.push(callback);
         this.events[eventName] = handlers;
     }
+
+    trigger(eventName: string): void {
+        const handlers = this.events[eventName];
+
+        // If there are no handlers at all yet or
+        // no events registered for this eventName, we return nothing to exit
+        if (!handlers || handlers.length === 0) {
+            return;
+        }
+
+        // loop through all the callbacks registered for the given eventName
+        // and call them each in turn
+        handlers.forEach(callback => callback());
+    }
 }

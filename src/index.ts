@@ -1,7 +1,8 @@
 import axios from "axios";
 
-// get all the users
-axios.get('http://localhost:3000/users');
+// update a user by `id`
+axios.put('http://localhost:3000/users/2', {
+    name: 'john',
+    age: 55
+});
 
-// get a specific user (with id = 1)
-axios.get('http://localhost:3000/users/1');

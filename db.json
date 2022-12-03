@@ -1,14 +1,19 @@
 {
-  "users": [
-    {
-      "name": "morne",
-      "age": 48,
-      "id": 1
-    },
-    {
-      "name": "john",
-      "age": 55,
-      "id": 2
-    }
-  ]
+    "users": [
+        {
+            "name": "morne",
+            "age": 48,
+            "id": 1
+        },
+        {
+            "id": 2,
+            "name": "Tommy",
+            "age": 20
+        },
+        {
+            "name": "Tina",
+            "age": 18,
+            "id": 3
+        }
+    ]
 }

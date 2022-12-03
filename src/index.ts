@@ -1,7 +1,17 @@
 import { User } from "./models/User";
 
-// if we create a new user object, by passing in an `id` it means
-//   we are working with a user that already exists (already has an id means iy exists on our DB)
-const user = new User({ id: 1 });
+// Update and existing user (user with id: 2)
+const tommy = new User({ id: 2 });
+tommy.set({
+    name: 'Tommy',
+    age: 20
+});
+tommy.save();
 
-user.fetch();
+// Create a new user (No id property yet)
+const tina = new User({
+    name: 'Tina',
+    age: 18
+});
+tina.save();
+

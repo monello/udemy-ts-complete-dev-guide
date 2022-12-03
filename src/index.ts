@@ -1,5 +1,7 @@
-// import axios from "axios";
+import { User } from "./models/User";
 
-// // delete a user by `id`
-// axios.delete('http://localhost:3000/users/3');
+// if we create a new user object, by passing in an `id` it means
+//   we are working with a user that already exists (already has an id means iy exists on our DB)
+const user = new User({ id: 1 });
 
+user.fetch();
